@@ -5,13 +5,19 @@ package oo.cc;
  */
 public class Franc extends Money {
 
-    public Franc(int amount) {
+    public Franc(int amount, String currency) {
         this.amount = amount;
+        this.currency = currency;
+    }
+
+    @Override
+    public String currency() {
+        return currency;
     }
 
     @Override
     public Money times(int multiple) {
-        return new Franc(amount * multiple);
+        return Money.franc(amount * multiple);
     }
 
     @Override

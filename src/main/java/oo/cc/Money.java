@@ -6,16 +6,19 @@ package oo.cc;
 public abstract class Money {
 
     protected int amount;
+    protected String currency;
 
     public static Dollar dollar(int amount) {
-        return new Dollar(amount);
+        return new Dollar(amount, "USD");
     }
 
     public static Franc franc(int amount) {
-        return new Franc(amount);
+        return new Franc(amount, "CHF");
     }
 
     public abstract Money times(int multiple);
+
+    public abstract String currency();
 
     @Override
     public boolean equals(Object o) {

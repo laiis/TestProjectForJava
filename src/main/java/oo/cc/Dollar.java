@@ -5,13 +5,19 @@ package oo.cc;
  */
 public class Dollar extends Money {
 
-    public Dollar(int amount) {
+    public Dollar(int amount, String currency) {
         this.amount = amount;
+        this.currency = currency;
+    }
+
+    @Override
+    public String currency() {
+        return currency;
     }
 
     @Override
     public Money times(int multiple) {
-        return new Dollar(amount * multiple);
+        return Money.dollar(amount * multiple);
     }
 
     @Override

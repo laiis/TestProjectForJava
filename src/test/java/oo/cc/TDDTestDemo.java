@@ -34,4 +34,12 @@ public class TDDTestDemo {
         assertTrue(fiveFranc.equals(fiveFranc));
     }
 
+    @Test
+    public void testCurrency() {
+        Money fiveDollor = Money.dollar(5);
+        Money fiveFranc = Money.franc(5);
+        assertEquals("USD", fiveDollor.currency);
+        assertEquals("CHF", fiveFranc.currency);
+    }
+
 }
