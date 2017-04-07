@@ -31,4 +31,12 @@ public class TDDTestDemo {
         assertEquals(new Franc(10), five.times(2));
         assertEquals(new Franc(15), five.times(3));
     }
+
+    @Test
+    public void testFrancEquals() {
+        Franc five = new Franc(5);
+        Franc newFive = new Franc(5);
+        assertTrue(five.equals(newFive));
+        assertTrue(five.equals(five));
+    }
 }
