@@ -8,3 +8,4 @@
 * complete ch1 ~ ch4
 * complete ch5
 * complete ch6
+* complete ch7

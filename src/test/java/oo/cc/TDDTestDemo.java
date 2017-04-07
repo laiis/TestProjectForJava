@@ -19,10 +19,15 @@ public class TDDTestDemo {
 
     @Test
     public void testEquals() {
-        Dollar five = new Dollar(5);
-        Dollar newFive = new Dollar(5);
-        assertTrue(five.equals(newFive));
-        assertTrue(five.equals(five));
+        Dollar fiveDollar = new Dollar(5);
+        Dollar newFiveDollar = new Dollar(5);
+        assertTrue(fiveDollar.equals(newFiveDollar));
+        assertTrue(fiveDollar.equals(fiveDollar));
+
+        Franc fiveFranc = new Franc(5);
+        Franc newFiveFranc = new Franc(5);
+        assertTrue(fiveFranc.equals(newFiveFranc));
+        assertTrue(fiveFranc.equals(fiveFranc));
     }
 
     @Test
@@ -30,13 +35,5 @@ public class TDDTestDemo {
         Franc five = new Franc(5);
         assertEquals(new Franc(10), five.times(2));
         assertEquals(new Franc(15), five.times(3));
-    }
-
-    @Test
-    public void testFrancEquals() {
-        Franc five = new Franc(5);
-        Franc newFive = new Franc(5);
-        assertTrue(five.equals(newFive));
-        assertTrue(five.equals(five));
     }
 }
