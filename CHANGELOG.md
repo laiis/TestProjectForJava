@@ -9,3 +9,4 @@
 * complete ch5
 * complete ch6
 * complete ch7
+* complete ch8

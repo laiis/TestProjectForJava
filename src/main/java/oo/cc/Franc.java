@@ -9,7 +9,8 @@ public class Franc extends Money {
         this.amount = amount;
     }
 
-    public Franc times(int multiple) {
+    @Override
+    public Money times(int multiple) {
         return new Franc(amount * multiple);
     }
 
