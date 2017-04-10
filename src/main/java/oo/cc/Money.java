@@ -3,7 +3,7 @@ package oo.cc;
 /**
  * Created by laiis on 2017/4/7.
  */
-public abstract class Money {
+public class Money {
 
     protected int amount;
     protected String currency;
@@ -21,7 +21,9 @@ public abstract class Money {
         this.currency = currency;
     }
 
-    public abstract Money times(int multiple);
+    public Money times(int multiple) {
+        return new Money(amount * multiple, currency);
+    }
 
     public String currency() {
         return currency;
@@ -32,18 +34,22 @@ public abstract class Money {
         if (this == o) {
             return true;
         }
-
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
+//
+//        if (o == null || getClass() != o.getClass()) {
+//            return false;
+//        }
+//
         if (!(o instanceof Money)) {
             return false;
         }
 
         Money money = (Money) o;
 
-        return amount == money.amount;
+        return amount == money.amount && currency().equals(money.currency());
     }
 
+    @Override
+    public String toString() {
+        return amount + " , " + currency;
+    }
 }
