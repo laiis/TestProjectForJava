@@ -8,12 +8,12 @@ public class Money {
     protected int amount;
     protected String currency;
 
-    public static Dollar dollar(int amount) {
-        return new Dollar(amount, "USD");
+    public static Money dollar(int amount) {
+        return new Money(amount, "USD");
     }
 
-    public static Franc franc(int amount) {
-        return new Franc(amount, "CHF");
+    public static Money franc(int amount) {
+        return new Money(amount, "CHF");
     }
 
     public Money(int amount, String currency) {
@@ -34,18 +34,18 @@ public class Money {
         if (this == o) {
             return true;
         }
-//
-//        if (o == null || getClass() != o.getClass()) {
-//            return false;
-//        }
-//
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
         if (!(o instanceof Money)) {
             return false;
         }
 
         Money money = (Money) o;
 
-        return amount == money.amount && currency().equals(money.currency());
+        return amount == money.amount;
     }
 
     @Override

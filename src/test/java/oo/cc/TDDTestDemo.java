@@ -24,14 +24,16 @@ public class TDDTestDemo {
     @Test
     public void testEquals() {
         Money fiveDollar = Money.dollar(5);
-        Dollar newFiveDollar = Money.dollar(5);
+        Money newFiveDollar = Money.dollar(5);
         assertTrue(fiveDollar.equals(newFiveDollar));
         assertTrue(fiveDollar.equals(fiveDollar));
 
         Money fiveFranc = Money.franc(5);
-        Franc newFiveFranc = Money.franc(5);
+        Money newFiveFranc = Money.franc(5);
         assertTrue(fiveFranc.equals(newFiveFranc));
         assertTrue(fiveFranc.equals(fiveFranc));
+
+        assertTrue(Money.dollar(5).equals(Money.franc(5)));
     }
 
     @Test
